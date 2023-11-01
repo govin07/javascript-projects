@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gilroy';
+        }
+        html, body{
+            height: 100%;
+            width: 100%;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: cadetblue;
+        }
+        #card{
+            border-radius: 10px;
+            height: 450px;
+            width: 300px;
+            background-color: #fff;
+            padding: 20px;
+        }
+        #card  img{
+            height: 50%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+        }
+        #card h1{
+            font-size: 25px;
+            margin: 10px 0px;
+            text-align: center;
+            font-weight: 800;
+        }
+       #card h5{
+        font-size: 25px;
+        color: red;
+        margin-bottom: 20px;
+        text-align: center;
+       }
+       #card button{
+         margin-left: 100px ; 
+ 
+      
+        background-color: cadetblue;
+        color: #fff;
+        font-weight: 700;
+        padding: 12px 20px;
+        border-radius: 50px;
+        border: none;
+        margin: 5px;
+        cursor: pointer;
+       }
+        /* #card #remove {
+        background-color: #dadada;
+        color: #111;
+       } */
+
+    </style>
+</head>
+<body>
+    <div id="card">
+        <img src="https://cdn.pixabay.com/photo/2014/12/22/10/04/lions-577104_1280.jpg" alt="  "  > 
+        <h1> Jungle Raja</h1>
+        <h5>Stranger</h5>
+        <div id="btn-container">
+           
+            <button id="add">Add friends</button>
+        </div>
+    </div>
+</body>
+<script>
+ let istatus = document.querySelector('h5')
+ let addFriend = document.querySelector('#add')
+ let check = 0
+
+ 
+
+ addFriend.addEventListener('click', function(){
+    if(check == 0){
+        istatus.innerHTML = "friends"
+    istatus.style.color = "green"
+    check = 1
+    }else{
+        istatus.innerHTML = "Starger"
+    istatus.style.color = "red"
+    check = 0
+
+    }
+   
+ })
+ 
+</script>
+</html>

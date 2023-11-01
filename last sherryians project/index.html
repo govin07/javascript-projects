@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+
+   }
+   html, body{ 
+    height: 100%;
+    width: 100%;
+
+   }
+   body{
+    background-color:rgb(28, 129, 129) ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   #card{
+    height:450px  ;
+    width: 350px;
+    background-color: #fff ;
+    border-radius: 10px;
+    border: 3px solid;
+    position: relative;
+   }
+   #storiya{
+    height: 120px;
+    width:  78p%;
+    /* background-color: red; */
+    border-bottom: 1px solid #dadada;
+    padding: 50px;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+   }
+   #storiya::-webkit-scrollbar{
+    display: none;
+   }
+   .story{
+     /* background-color: blue; */
+     border : 3px solid red;
+     height: 80px;
+     border-radius: 50%;
+     width: 80px;
+     overflow: hidden;
+     display: inline-block;
+   }
+   .story img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+   }
+   #full-screen{
+    height: 100%;
+    width: 100%;
+    /* background-color: red; */
+    background-position: center;
+    position: absolute;
+    display: none;
+   }
+    </style>
+</head>
+<body>
+    <div id="card">
+        <div id="full-screen"></div>
+        <div id="storiya">
+          <div class="story">
+            <img src="" alt="">
+           
+            
+          </div>
+          <!-- <div class="story">
+            <img src="https://images.unsplash.com/photo-1682687220161-e3e7388e4fad?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+           
+            
+          </div> -->
+          <!-- <div class="story">
+            <img src="https://images.unsplash.com/photo-1682687220161-e3e7388e4fad?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+           
+            
+          </div> -->
+         
+        </div>
+    </div>
+</body>
+<script>
+var arr = [
+    {
+        dp: "https://images.unsplash.com/photo-1682687220161-e3e7388e4fad?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", story:"https://images.unsplash.com/photo-1697194097089-c78003fc69a3?auto=format&fit=crop&q=80&w=986&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        dp: "https://images.unsplash.com/photo-1697659885050-fc2c379082a5?auto=format&fit=crop&q=80&w=987&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", story:"https://images.unsplash.com/photo-1697955782802-4db7d7ae2545?auto=format&fit=crop&q=80&w=987&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        dp: "https://images.unsplash.com/photo-1697792480519-3e2e7eba4be0?auto=format&fit=crop&q=80&w=996&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", story:"https://images.unsplash.com/photo-1697909623126-e2ecf6f66869?auto=format&fit=crop&q=80&w=987&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        dp: "https://images.unsplash.com/photo-1697874633717-0db2bfc8afd8?auto=format&fit=crop&q=80&w=987&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", story:"https://images.unsplash.com/photo-1697801779254-e554e4aabec6?auto=format&fit=crop&q=80&w=987&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    
+    
+]
+ var storiyan = document.querySelector("#storiya")
+var clutter = ""
+arr.forEach(function(elem,idx){
+    clutter += ` <div class="story">
+            <img id="${idx}" src="${elem.dp}" alt="">
+           
+            
+          </div>`
+    
+})
+storiyan.innerHTML = clutter;
+storiyan.addEventListener('click', function(dets)
+{
+    document.querySelector("#full-screen").style.display = "block"
+    document.querySelector("full-screen").style.backgroundImage = `url(${arr[dets.target.id].story}) `
+//  var value = arr[dets.target.id].story
+})
+</script>
+</html>
