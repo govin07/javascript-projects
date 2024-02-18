@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Message</title>
+</head>
+<body>
+
+  <script>
+    // Function to accept number of terms and print welcome message
+    function printWelcomeMessage() {
+      // Prompt the user for the number of terms
+      var numberOfTerms = prompt("Enter the number of terms:");
+
+      // Validate if the input is a valid number
+      if (isNaN(numberOfTerms) || numberOfTerms === null) {
+        alert("Invalid input. Please enter a valid number.");
+        return; // Exit the function
+      }
+
+      // Convert the input to a number
+      numberOfTerms = parseInt(numberOfTerms);
+
+      // Loop to print the welcome message
+      for (var i = 0; i < numberOfTerms; i++) {
+        console.log("Welcome!");
+      }
+    }
+
+    // Call the function
+    printWelcomeMessage();
+  </script>
+
+</body>
+</html>

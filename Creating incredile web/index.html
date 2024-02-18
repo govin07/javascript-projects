@@ -6,6 +6,13 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <style>
+           @font-face{
+            font-family: domain;
+            src: url(./domaine.ttf);
+           }
+
+
+
         *{
             margin: 0;
             padding: 0;
@@ -16,11 +23,16 @@
             height: 100%;
             width: 100%;
         }
+        #main{
+            background-color:#222 ;
+            overflow-x: hidden;
+        }
         #page1{
             height: 100vh;
             width: 100wh;
             background-color: #C4BDB3;
             position: relative;
+            overflow-x: hidden;
         }
         #nav{
             height: 110px;
@@ -60,7 +72,7 @@
            
         }
         #elem2{
-            width: 25%;
+            width: 30%;
             height: 100%;
             padding: 20px 60px;
             /* background-color: blue; */
@@ -97,7 +109,7 @@
             overflow: hidden;
 
         }
-        #elem h4{
+        #elem1 h4{
             font-size: 20px;
             margin-top: 20px;
             margin-bottom: 20px;
@@ -111,6 +123,66 @@
            padding: 4px;
            margin-left: 10px;
            border-radius: 5px;
+        }
+        #elem1 p{
+            font-size: 22x;
+            font-family: domaine;
+            font-weight: 100;
+            color: #656565;
+        }
+
+        #elem3 h4{
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-family: Canopee;
+        }
+        #elem3 h4 span{
+           background-color: #B93C12; 
+           color: #C4BCB3;
+           font-weight: 100;
+           font-size: 18px;
+           padding: 4px;
+           margin-left: 10px;
+           border-radius: 5px;
+        }
+        #elem3 p{
+            font-size: 22x;
+            font-family: domaine;
+            font-weight: 100;
+            color: #656565;
+        }
+
+        #elem2 h2{
+            font-family: canopee;
+            font-size: 70px;
+            font-weight: 100;
+        }
+
+
+            #elem2 h3{
+            font-family: domaine;
+            font-size: 40px;
+            font-weight: 90;
+            color: #4f4d4d;
+            margin: 20px 0;
+        }
+
+        #elem2 h6{
+           font- family: domain;
+           font-size: 20px;
+
+        }
+        #page1 h1{
+            font-size: 500px;
+            font-weight: 100;
+            font-family: canopee;
+            background-color: #1C1C1A;
+            color: #c0b6b6;
+            line-height: 500px;
+            width: 96%;
+            margin: 2%;
+            
         }
     </style>
 </head>
@@ -151,8 +223,29 @@
                        </p>
                 </div>
             </div>
+            <h1>MIRANDA</h1>
         </div>
     </div>
     
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script>
++ let tl = gsap.timeline()
+
+tl.to("#page1", {
+    y: "100vh",
+    scale: 0.6,
+    duration: 0
+
+})
+tl.to("#page1",{
+    y: "30vh",
+    duration: 1,
+    delay: 1
+})
+
+
+</script>
 </html>
